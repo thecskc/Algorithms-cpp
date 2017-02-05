@@ -48,7 +48,7 @@ void shortestPath(Graph& graph, int source)
 	queue<int> graphQueue;
 
 	vector<vertexInfo> vertices(graph.size());
-	for (auto i : vertices)
+	for (auto& i : vertices)
 	{
 		i.distance = -1;i.previous_node = -1;
 	}
