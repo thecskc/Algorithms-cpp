@@ -6,6 +6,7 @@
 #include<stack>
 using namespace std;
 
+
 typedef vector<list<int>> Graph;
 
 struct vertexInfo
@@ -41,7 +42,7 @@ void printpath(int current, vector<vertexInfo>& vertices)
 }
 
 
-
+//Vertex representations are in adjacency lists.
 void shortestPath(Graph& graph, int source)
 {
 	queue<int> graphQueue;
