@@ -12,7 +12,7 @@ typedef vector<list<int>> Graph;
 
 //Vertex representations are in adjacency lists.
 
-//Goal node is 8 and source node is 
+//Goal node is 7 and source node is 0
 
 struct VertexInfo
 {
