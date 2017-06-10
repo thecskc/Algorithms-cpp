@@ -61,7 +61,7 @@ public:
 			
 
 		}
-		return this;
+		return *this;
 
 
 	}
@@ -69,6 +69,11 @@ public:
 	//Move assignment operator
 	Vector& operator=(Vector&& rhs)
 	{
+		swap(data, rhs.data);
+		swap(size, rhs.size);
+		swap(capacity, rhs.capacity);
+		
+		return *this;
 
 	}
 
@@ -77,6 +82,13 @@ public:
 	~Vector()
 	{
 		delete[] data;
+	}
+
+	bool push_back(const Object& entry)
+	{
+
+
+
 	}
 
 	
