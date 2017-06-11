@@ -103,6 +103,7 @@ public:
 		delete[] data;
 	}
 
+	//adds an entry to the back of the vector
 	bool push_back(const Object& entry)
 	{
 		if (size + 1 == capacity)
@@ -112,6 +113,24 @@ public:
 		data[size++] = move(entry);
 		
 
+
+
+	}
+
+	//removes an entry from the back of the vector.
+	bool pop_back()
+	{
+		Object *newData = new Object[capacity];
+		for (int counter = 0;counter < size - 1;counter++)
+		{
+			newData[counter] = data[counter];
+
+		}
+
+		delete[] data;
+		size = size - 1;
+		data = newData;
+		newData = nullptr;
 
 
 	}
