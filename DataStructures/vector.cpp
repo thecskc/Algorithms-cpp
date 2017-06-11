@@ -13,6 +13,25 @@ private:
 	int capacity;
 	const int INITIAL_SIZE = 16;
 
+	void resize()
+	{
+		int newCapacity = 2 * size + SPARE_CAPACITY;
+		Object *newData = new Object[newCapacity];
+		for (int counter = 0;counter < size;counter++)
+		{
+			newData[counter] = data[counter];
+		}
+
+		capacity = newCapacity;
+
+		delete[] data;
+		data = newData;
+		newData = nullptr;
+
+
+
+	}
+
 	
 public:
 
@@ -86,6 +105,12 @@ public:
 
 	bool push_back(const Object& entry)
 	{
+		if (size + 1 == capacity)
+		{
+			resize();
+		}
+		data[size++] = move(entry);
+		
 
 
 
