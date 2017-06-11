@@ -11,7 +11,7 @@ private:
 	Object* data;
 	int size;
 	int capacity;
-	const int INITIAL_SIZE = 16;
+	const static int INITIAL_SIZE = 0;
 
 	void resize()
 	{
@@ -96,6 +96,7 @@ public:
 
 	}
 
+	//no checking of bounds.
 	Object& operator[](int position) const
 	{
 		return data[position];
@@ -109,7 +110,7 @@ public:
 	}
 
 	//adds an entry to the back of the vector
-	bool push_back(const Object& entry)
+	void push_back(const Object& entry)
 	{
 		if (size + 1 == capacity)
 		{
@@ -117,13 +118,13 @@ public:
 		}
 		data[size++] = move(entry);
 		
-
+		
 
 
 	}
 
 	//removes an entry from the back of the vector.
-	bool pop_back()
+	void pop_back()
 	{
 		Object *newData = new Object[capacity];
 		for (int counter = 0;counter < size - 1;counter++)
@@ -137,7 +138,17 @@ public:
 		data = newData;
 		newData = nullptr;
 
+		
 
+	}
+
+
+	void displayVector()
+	{
+		for (int counter = 0;counter < size;counter++)
+		{
+			cout << data[counter] << endl;
+		}
 	}
 
 
@@ -156,7 +167,20 @@ public:
 
 int main()
 {
+	Vector<int> vec;
+	vec.push_back(10);
+	vec.push_back(20);
+	vec.displayVector();
+	vec.pop_back();
+	vec.displayVector();
 
+	cout << vec[0] << endl;
+
+	cout << vec[10] << endl; //no bounds checking
+
+	vec[0] = 50;
+	cout << vec[0] << endl;
+	
 
 
 }
