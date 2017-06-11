@@ -96,6 +96,11 @@ public:
 
 	}
 
+	Object& operator[](int position) const
+	{
+		return data[position];
+	}
+
 
 	//Destructor
 	~Vector()
@@ -134,6 +139,8 @@ public:
 
 
 	}
+
+
 
 	
 
