@@ -4,7 +4,6 @@
 #include<algorithm>
 using namespace std;
 
-
 //f(i) = permutations of substring ending at index i
 //f(i) = f(i-1) + {character i and every possible position within each string in f(i-1)}
 void dp(vector<string>& permutations, string s, int index) {
@@ -32,8 +31,6 @@ void dp(vector<string>& permutations, string s, int index) {
 
 
 }
-
-
 
 int main() {
 	string s = "abcdefghij";
