@@ -33,10 +33,10 @@ void dp(vector<string>& permutations, string s, int index) {
 }
 
 int main() {
-	string s = "abcdefghij";
+	string s = "abcd";
 	vector<string> permutations;
 
-	dp(permutations, s, 9);
+	dp(permutations, s, 3);
 
 	for (string s : permutations) {
 		cout << s << endl;
